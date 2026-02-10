@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0F"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Logo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📱"
+            android:textSize="48sp"
+            android:layout_marginTop="32dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RemotPhone"
+            android:textSize="28sp"
+            android:textColor="#E8E8F0"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Удалённый доступ к телефону"
+            android:textSize="14sp"
+            android:textColor="#888899"
+            android:layout_marginTop="4dp" />
+
+        <!-- Server URL Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="Адрес сервера"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/serverUrlInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ws://192.168.1.100:3000"
+                android:textColor="#E8E8F0"
+                android:inputType="textUri"
+                android:fontFamily="monospace"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:padding="16dp"
+            android:background="@drawable/card_bg">
+
+            <View
+                android:id="@+id/statusDot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/dot_offline" />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Не подключено"
+                android:textColor="#888899"
+                android:textSize="14sp"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <!-- Pairing Code Display -->
+        <LinearLayout
+            android:id="@+id/codeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:padding="24dp"
+            android:background="@drawable/card_bg"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Код подключения"
+                android:textColor="#888899"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/codeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="000000"
+                android:textSize="42sp"
+                android:textColor="#6C5CE7"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.3"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Введите этот код на ПК"
+                android:textColor="#888899"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Connect Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/connectBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:text="Подключиться к серверу"
+            android:textSize="16sp"
+            android:backgroundTint="#6C5CE7" />
+
+        <!-- Screen Capture Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/screenCaptureBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:text="▶ Начать трансляцию экрана"
+            android:textSize="14sp"
+            android:backgroundTint="#00D2A0"
+            android:visibility="gone" />
+
+        <!-- Permissions Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Необходимые разрешения"
+            android:textColor="#888899"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/accessibilityBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚙️ Включить Accessibility Service"
+            android:textSize="13sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:strokeColor="#2A2A3A" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/notificationBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔔 Доступ к уведомлениям"
+            android:textSize="13sp"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:strokeColor="#2A2A3A" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/batteryBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔋 Отключить оптимизацию батареи"
+            android:textSize="13sp"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:strokeColor="#2A2A3A" />
+
+        <!-- Log -->
+        <TextView
+            android:id="@+id/logText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:padding="16dp"
+            android:background="@drawable/card_bg"
+            android:textColor="#888899"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:maxLines="10"
+            android:text="Журнал событий..." />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="80dp" />
+    </LinearLayout>
+</ScrollView>

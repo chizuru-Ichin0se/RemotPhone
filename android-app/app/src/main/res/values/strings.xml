@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RemotPhone</string>
+    <string name="accessibility_description">RemotPhone использует специальные возможности для удалённого управления устройством (тапы, свайпы, ввод текста с ПК).</string>
+    <string name="channel_name">RemotPhone Service</string>
+    <string name="channel_description">Фоновая служба для удалённого доступа</string>
+</resources>
